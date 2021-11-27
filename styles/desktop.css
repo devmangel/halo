@@ -1,0 +1,9 @@
+.header__container{
+
+    display: flex;
+}
+
+.header__item{
+
+    letter-spacing: 5px;
+}

@@ -1,0 +1,82 @@
+:root {
+    --primary_color: #FFFFFF;
+    --secundary-color: #778450;
+  }
+
+*{
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+
+    font-size: 62.5%;
+    background-color: Black;
+    z-index:2;
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.background-image{
+
+    background: url(../images/Halo-Reach.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header{
+
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    background-color: black;
+    opacity: .8;
+    height: 70px;
+    width: 100%;
+}
+
+.menu-active{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    font-size: 1.4rem;
+}
+
+.menu-inactive{
+
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    font-size: 1.4rem;
+}
+
+.header__item{
+
+    color: white;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.header__item:hover{
+
+    border-bottom: 2px white solid;
+}
+
+
+
+
+
