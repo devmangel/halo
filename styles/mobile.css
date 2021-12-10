@@ -1,6 +1,6 @@
 :root {
     --primary_color: #FFFFFF;
-    --secundary-color: #778450;
+    --secundary-color: #92af3a;
   }
 
 *{
@@ -20,18 +20,22 @@ html{
 
 }
 
+.main{
+
+    display: flex;
+    flex-direction: column;
+}
 .background-image{
 
     background: url(../images/Halo-Reach.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    width: 100vw;
+    height: 550px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     opacity: .9;
-    overflow-y: hidden;
 }
 
 .header{
@@ -103,7 +107,7 @@ html{
     background-color: black;
     opacity: .8;
     border-radius: 15px;
-    box-shadow: 2px 2px 10px #2c59dd;
+    box-shadow: 2px 2px 10px 1px #2c59dd;
     padding: 20px;
 }
 
@@ -151,24 +155,47 @@ html{
 
 .search-btn:hover{
 
-    box-shadow: 2px 2px 10px 1px #2c59dd;
+    box-shadow: 2px 2px 10px 5px #2c59dd;
 }
 
 .footer{
 
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: auto;
     padding: 5px;
     background: black;
 }
 
+.footer__social-container{
+
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.twitter{
+
+    display: inline-block;
+    background-image: url(../images/icons8-twitter.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+.linkedin{
+
+    display: inline-block;
+    background-image: url(../images/icons8-linkedin.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
 .footer__text{
 
     color: white;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .footer__devmangel{
@@ -176,3 +203,115 @@ html{
     font-size: 1.2rem;
 }
 
+
+.results-window{
+
+    display: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 550px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.results__container{
+
+    border: solid white 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100px;
+    height: 110px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px var(--primary_color);
+    margin: 0px 10px;
+}
+
+.results__img{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.xp{
+    background-image: url(../images/halo.png);
+}
+
+.kills{
+
+    background-image: url(../images/Spree-extermination.png);
+}
+
+.headshots{
+
+    background-image: url(../images/Kill-headshot.png);
+}
+
+.shoots{
+
+    background-image: url(../images/Spree-untouchable.png);
+}
+
+.melee{
+
+    background-image: url(../images/Kill-melee.png);
+}
+
+.assassinations{
+
+    background-image: url(../images/Kill-assassination.png);
+}
+
+.powerweapon{
+
+    background-image: url(../images/Kill-sniper-rifle-kill.png);
+}
+
+.deaths{
+
+    background-image: url(../images/death.png);
+}
+
+.granade{
+
+    background-image: url(../images/Kill-grenade-kill.png);
+}
+
+.results__tittle{
+
+    height: 25px;
+    width: 100px;
+    text-align: center;
+    color: var(--secundary-color);
+    padding-top: 8px;
+    font-size: 1rem;
+}
+.results__number{
+
+    height: 25px;
+    width: 100px;
+    padding-top: 3px;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.btn-home{
+
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/icons8-home.svg);
+    background-repeat: no-repeat;
+    margin: 30px auto 0px;
+}
+
+.btn-home__style:hover{
+
+    box-shadow: 1px 1px 5px 2px var(--secundary-color);
+    cursor: pointer;
+}

@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="./styles/tablet.css" media="(min-width: 765px)">
     <meta property="og:image"content="/images/favicon.png"></metaproperty>
     <meta name="robots" content="index"/>
     <meta name="description" content="Halo is a military science fiction media franchise created by Bungie. The franchise is currently managed and developed by 343 Industries, and owned and published by Xbox Game Studios. The central focus of the franchise builds on the experiences of Master Chief John-117, one of a group of supersoldiers code-named Spartans, and his artificial intelligence (AI) companion, Cortana."/>
@@ -19,7 +20,7 @@
     <title>Halo 5</title>
 </head>
 <body>
-    <main>
+    <main class="main">
         <header class="header">
             <h3 class="header__tittle menu-active" id="tittle-hide">TO BE DEFINED</h3>
             <ul class="menu-inactive" id="menu-hide">
@@ -37,18 +38,84 @@
                 </div>
             </div>
         </header>
-        <div class="background-image">
-            <div class="search-container">
-                <h2 class="search__tittle search-top-tittle">Halo 5 - Guardians</h2>
-                <h1 class="search__tittle">Check your Campaign Service Records</h1>
-                <input type="text" class="search-input" placeholder="Gamertag" id="gamertag">
-                <button class="search-btn" id="btn">Start</button>
+            <div class="results-window" id="window-results"> 
+                <div class="spartanRank results__container">
+                    <span class="results__img" id="spartanRank__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Spartan Rank</p>
+                    <p id="spartanRank-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="xp results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Experience Points</p>
+                    <p id="experiencePoints-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="kills results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Total Kills</p>
+                    <p id="totalKills-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="headshots results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Headshots</p>
+                    <p id="totalHeadshots-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="shoots results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Shots Fired</p>
+                    <p id="totalShotsFired-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class=" results__img" id="weaponMostKill"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Weapon Most Kills</p>
+                    <p id="weaponWithMostKills-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="melee results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Melee Kills</p>
+                    <p id="totalMeleeKills-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="assassinations results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Assassinations</p>
+                    <p id="totalAssassinations-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="powerweapon results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Power Weapon Kills</p>
+                    <p id="totalPowerWeaponKills-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="deaths results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Total Deaths</p>
+                    <p id="totalDeaths-result" class="results__number"></p>
+                </div>
+                <div class="results__container">
+                    <span class="granade results__img"></span>
+                    <p id="spartanRank-tittle" class="results__tittle">Grenade Kills</p>
+                    <p id="totalGrenadeKills-result" class="results__number"></p>
+                </div>
+                <div class="btn-home__style results__container">
+                    <a class="btn-home" href="/"></a>
+                    <p class="results__number">Home</p>
+                </div>
             </div>
-            <footer class="footer">
-                <p class="footer__text footer__devmangel">Made with &#128153 by @Devmangel</p>
-                <p class="footer__text">This application is offered by devmangel, which is solely responsible for its content. It is not sponsored or endorsed by Microsoft. This application uses the Halo® Game Data API. Halo © Microsoft Corporation. All rights reserved. Microsoft, Halo, and the Halo Logo are trademarks of the Microsoft group of companies.</p>
-            </footer>
-        </div>
+            <div class="background-image" id="change-background">
+                <div class="search-container">
+                    <h2 class="search__tittle search-top-tittle">Halo 5 - Guardians</h2>
+                    <h1 class="search__tittle">Check your Campaign Service Records</h1>
+                    <input type="text" class="search-input" placeholder="Gamertag" id="gamertag">
+                    <button class="search-btn" id="btn"  onclick="newWindow()">Start</button>
+                </div>
+            </div>
+
+        <footer class="footer">
+            <div class="footer__social-container">
+                <a class="twitter" href=""></a>
+                <a class="linkedin" href=""></a>
+            </div>
+            <p class="footer__text footer__devmangel">Made with &#128153 by @devmangel</p>
+            <p class="footer__text">This application is offered by devmangel, which is solely responsible for its content. It is not sponsored or endorsed by Microsoft. This application uses the Halo® Game Data API. Halo © Microsoft Corporation. All rights reserved. Microsoft, Halo, and the Halo Logo are trademarks of the Microsoft group of companies.</p>
+        </footer>
     </main>
     <script src="./devmangel.js"></script>
 </body>

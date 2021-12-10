@@ -51,36 +51,114 @@ btnRequest.addEventListener("click",()=>{
          xhr.addEventListener("load", (data) => {
     
              let spartanRank = JSON.parse(data.target.response).Results[0].Result.SpartanRank;
-             let experiencePoints = JSON.parse(data.target.response).Results[0].Result.Xp;
-             let totalKills = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalKills;
-             let totalHeadshots = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalHeadshots;
-             let totalShotsFired = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalShotsFired;
-             let WeaponWithMostKills = JSON.parse(data.target.response).Results[0].Result.CampaignStat.WeaponWithMostKills.WeaponId.StockId;
-             let TotalMeleeKills = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalMeleeKills;
-             let TotalAssassinations = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalAssassinations;
-             let TotalPowerWeaponKills = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalPowerWeaponKills;
-             let TotalDeaths = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalDeaths;
+             let experiencePoints = format(JSON.parse(data.target.response).Results[0].Result.Xp);
+             let totalKills = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalKills);
+             let totalHeadshots = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalHeadshots);
+             let totalShotsFired = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalShotsFired);
+             let weaponWithMostKills = JSON.parse(data.target.response).Results[0].Result.CampaignStat.WeaponWithMostKills.WeaponId.StockId;
+             let totalMeleeKills = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalMeleeKills);
+             let totalAssassinations = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalAssassinations);
+             let totalPowerWeaponKills = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalPowerWeaponKills);
+             let totalDeaths = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalDeaths);
+             let totalGrenadeKills = format(JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalGrenadeKills);
 
 
-             let TotalGrenadeKills = JSON.parse(data.target.response).Results[0].Result.CampaignStat.TotalGrenadeKills;
 
-             console.log(experiencePoints);
-             console.log(totalKills);
-             console.log(totalHeadshots);
-             console.log(totalShotsFired);
-             console.log(WeaponWithMostKills);
-             console.log(TotalMeleeKills);
-             console.log(TotalPowerWeaponKills);
-             console.log(TotalAssassinations);
-             console.log(TotalDeaths);
-             console.log(TotalGrenadeKills);
+             document.getElementById("spartanRank-result").innerHTML = spartanRank;
+             imageRank(spartanRank);
+             document.getElementById("experiencePoints-result").innerHTML = experiencePoints;
+             document.getElementById("totalKills-result").innerHTML = totalKills;
+             document.getElementById("totalHeadshots-result").innerHTML = totalHeadshots;
+             document.getElementById("totalShotsFired-result").innerHTML = totalShotsFired;
+             translateWeapon(weaponWithMostKills);
+             document.getElementById("totalMeleeKills-result").innerHTML = totalMeleeKills;
+             document.getElementById("totalAssassinations-result").innerHTML = totalAssassinations;
+             document.getElementById("totalPowerWeaponKills-result").innerHTML = totalPowerWeaponKills;
+             document.getElementById("totalDeaths-result").innerHTML = totalDeaths;
+             document.getElementById("totalGrenadeKills-result").innerHTML = totalGrenadeKills;
+
          })
          xhr.send()
 
 })
 
 
+const newWindow = () => {
+
+    document.getElementById("change-background").style.display = 'none';
+    document.getElementById("window-results").style.display = 'flex';
+};
 
 
+function translateWeapon(ide){
 
+
+        let xhr;
+
+        if (window.XMLHttpRequest) xhr = new XMLHttpRequest();
+        else hxr = new ActiveXObject("Microsoft.XMLHTTP");
+
+         xhr.open('GET',`https://www.haloapi.com/metadata/h5/metadata/weapons`)
+
+         xhr.setRequestHeader('Ocp-Apim-Subscription-Key',getId.id)
+    
+         xhr.addEventListener("load", (data) => {
+
+
+            let listOfItems = JSON.parse(data.target.response);
+
+            for (item in listOfItems){
+
+                if(listOfItems[item].id == ide){
+
+                    document.getElementById("weaponWithMostKills-result").innerHTML = listOfItems[item].name;
+                    const imgWeapon = listOfItems[item].smallIconImageUrl;
+                    document.getElementById("weaponMostKill").style.backgroundImage = `url(${imgWeapon})`;
+                }
+            }
+
+         })
+
+         xhr.send()
+
+};
+
+const format = num => 
+    String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,');
+
+
+function imageRank(rank){
+
+        let xhr;
+
+        if (window.XMLHttpRequest) xhr = new XMLHttpRequest();
+        else hxr = new ActiveXObject("Microsoft.XMLHTTP");
+
+        xhr.open('GET','https://www.haloapi.com/metadata/h5/metadata/spartan-ranks')
+        xhr.setRequestHeader('Ocp-Apim-Subscription-Key',getId.id)
+
+        xhr.addEventListener('load',(data) => {
+
+            let listOfRanks = JSON.parse(data.target.response);
+
+             listOfRanks.map((item) => {
+
+                 if (item.id == rank){
+
+                     let image = item.reward.requisitionPacks[0].largeImageUrl;
+                     document.getElementById('spartanRank__img').style.backgroundImage = `url(${image})`;
+                 }
+             })
+        })
+
+        xhr.send()
+
+};
+
+const getId = {
+
+    id: "1896f33d410b431bb219833b4cd1876b"
+}
+
+Object.freeze(getId);
 

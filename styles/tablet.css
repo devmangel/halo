@@ -1,0 +1,42 @@
+.background-image{
+
+    height: 100vh;
+    background-size: 100%;
+}
+
+.header__container{
+
+    display: flex;
+}
+
+.header__item{
+
+    letter-spacing: 5px;
+}
+
+.search-container{
+
+    margin: 35% auto 0px;
+    width: 50%;
+}
+
+.results__container{
+
+    margin: 0px 20px;
+    width: 150px;
+    height: 150px;
+}
+
+.results__tittle{
+
+    font-size: 1.4rem;
+    width: 90%;
+}
+
+.results__number{
+
+    width: 100%;
+    
+    font-size: 1.6rem;
+}
+

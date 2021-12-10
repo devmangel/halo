@@ -1,3 +1,20 @@
+
+.main{
+
+    font-size: 1.8rem;
+}
+
+.background-image{
+
+    height: 100vh;
+    background-size: 100%;
+}
+
+.header__tittle{
+
+    font-size: 3rem;
+}
+
 .header__container{
 
     display: flex;
@@ -6,4 +23,26 @@
 .header__item{
 
     letter-spacing: 5px;
+    font-size: 1.6rem;
+}
+
+.search-container{
+
+    margin: 40% auto 0px;
+    width: 50%;
+}
+
+.search-top-tittle{
+
+    font-size: 2rem;
+}
+
+.results__container{
+
+    margin: 0px 50px;
+}
+
+@media screen and (min-width: 1269px){
+
+    
 }
