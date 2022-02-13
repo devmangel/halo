@@ -26,12 +26,10 @@ const menuClick = () => {
 
 menu.addEventListener("click", menuClick);
 
-
-// onclick="this.classList.toggle('open');
+// Event listener and Function which modify classes of menu hamburger
 
 
 const btnRequest = document.getElementById("btn");
-
 
 
 btnRequest.addEventListener("click",()=>{

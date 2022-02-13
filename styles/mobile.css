@@ -228,13 +228,9 @@ html{
 }
 
 .results__img{
-    display: inline-block;
-    width: 80px;
+    width: 40%;
     height: 40px;
     margin-top: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: center;
 }
 
 .xp{
